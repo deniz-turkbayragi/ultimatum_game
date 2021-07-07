@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+
+{% block title %}
+
+       OYUN 1
+
+{% endblock %}
+
+{% block content %}
+
+    {% include Constants.instructions_template %}
+
+    <p>
+            Oyunun kuralları daha sonra başvurmanız için ekranınızda kalacaktır.
+    </p>
+
+    {% next_button %}
+
+
+
+{% endblock %}

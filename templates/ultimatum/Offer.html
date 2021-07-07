@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+      Oyun 1- Kararınız
+{% endblock %}
+
+{% block content %}
+  
+
+<p> Eğer <b>GÖNDERİCİ</b> olarak seçilirseniz elinizdeki <b>{{ Constants.endowment }} TL</b>'nin ne kadarını <b>ALICI</b>'ya teklif edersiniz?  </p>
+<p><i> Eğer oyunda GÖNDERİCİ olarak seçilirseniz seçtiğiniz miktar ALICI'ya teklif edilecektir.</i></p>
+
+    <p>Lütfen boşluğa teklif etmek istediğiniz miktarı 0 ile 200 arasında bir sayı olarak giriniz  </p>
+
+    {% formfield player.offer_player %}
+
+    {% next_button %}
+
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Oyun 1- Kurallar
+{% endblock %}
+
+{% block content %}
+
+<div id="buttonNext" style="text-align:right; visibility: hidden">
+    {% next_button %}
+</div>
+
+<audio id="video"  controls autoplay>
+    <source src="{% static audio_path %}"  type="audio/mp3">
+</audio>
+
+
+<script>
+
+    var video = document.getElementById('video');
+    var supposedCurrentTime = 0;
+    video.addEventListener('timeupdate', function() {
+      if (!video.seeking) {
+            supposedCurrentTime = video.currentTime;
+      }
+    });
+    video.addEventListener('seeking', function() {
+      var delta = video.currentTime - supposedCurrentTime;
+      if (delta > 0.01) {
+        video.currentTime = supposedCurrentTime;
+      }
+    });
+    console.log(video)
+    video.addEventListener('ended', function() {
+        document.getElementById("buttonNext").style.visibility = "initial";
+        supposedCurrentTime = 0;
+    });
+</script>
+
+    {% formfields %}
+
+<br></br>
+<h5>
+<ul>
+    <li><b>Biriminiz içerisinde </b> rastgele iki kişilik gruplar oluşturulacak.</li>
+
+    <li>Rastgele bir kişi <b>GÖNDERİCİ </b>, diğer kişi <b>ALICI</b> rolünde olacak.</li>
+
+    <li><b>GÖNDERİCİ</b>'nin <b>200 TL</b>’si olacak, ve bu paranın ne kadarını <b>ALICI</b>'ya <b>teklif etmek istediğini</b> seçecek.</li>
+
+    <li><b>ALICI</b>  teklifi <b> kabul edip etmemeyi </b> seçecek</li>
+
+    <li>Eğer <b>ALICI teklifi kabul ederse</b> teklif edilen miktarı alacak, <b>GÖNDERİCİ</b> de 200 lirasından geri kalan parayı alacak.</li>
+
+    <li>Eğer <b>ALICI teklifi kabul etmezse</b> iki kişi de <b>0 TL</b> alacak</li>
+
+    <li>Herkes oyunun başında: </li>
+
+     <li> <b>Eğer GÖNDERİCİ olursa 200 lirasının ne kadarını göndermek istediğini </b></li>
+
+    <li><b>Eğer ALICI olursa  da hangi teklifleri kabul edip etmeyeceğini </b> belirtecek.</li>
+
+    <li> Daha sonra bilgisayar rastgele iki kişiden birini gönderici, birini alıcı yapacak. </li>
+	<li> <b>GÖNDERİCİ</b>'nin verdiği karara göre teklif belirlenecek. </li>
+	<li> <b>ALICI</b>'nın kararlarına bakıp bu teklifi kabul etmek isteyip istemediğini göreceğiz.  </li>
+    <li><b><i>Unutmayın bu oyunda gönderici ya da alıcı olarak seçilme ihtimaliniz var.</i></b></li>
+    <li> Oyunların sonunda, kuradan bu oyun çıkarsa, bu oyundaki kazancınızı elde edeceksiniz. </li>
+</ul>
+</h5>
+
+
+
+{% endblock %}

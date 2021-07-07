@@ -1,0 +1,32 @@
+
+{% extends "global/BaseMotherhood.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    KİMLİK NUMARASI (ID)
+{% endblock %}
+
+{% block content %}
+
+{% load otree_tags staticfiles %}
+
+<div class="instructions well well-lg">
+
+    <h2 class="panel-sub-heading">
+        
+    </h2>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'global/matrix.css' %}"/>
+
+    <p>
+        Lütfen etkinliğe katılımınızı size verilen katılımcı numarasını aşağıdaki boşluğa girerek onaylayınız.
+    </p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+</div>
+{% endblock %}
+

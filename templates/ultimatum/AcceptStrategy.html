@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Oyun 1- Kararınız
+{% endblock %}
+
+{% block content %}
+
+<p><b>ALICI</b> olarak seçildiğiniz durumda, <b>GÖNDERİCİ</b>'nin teklifini kabul etmeniz için, teklif <b>minimum kaç TL</b> olmalıdır?</p>
+
+<p><i> Eğer oyunda ALICI olarak seçilirseniz, aşağıda verdiğiniz karar uygulanacaktır. GÖNDERİCİ'nin teklifi aşağıda belirttiğiniz miktardan büyükse teklifi kabul edeceksiniz, eğer küçükse teklifi reddedeceksiniz.</i></p>
+
+    <p> Lütfen boşluğa 0 ile 200 arasında bir sayı giriniz. </p>
+
+    {% formfield player.min_accepted_offer_player  %}
+
+    {% next_button %}
+
+
+{% endblock %}

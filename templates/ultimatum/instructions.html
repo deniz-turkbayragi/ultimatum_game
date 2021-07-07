@@ -1,0 +1,32 @@
+{% load otree %}
+
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading">
+    </h3>
+
+    <div class="panel-body">
+
+        <p>Bu bölümde <b> biriminiz içinden</b> rastgele iki kişilik gruplar oluşturulacak. Kiminle eşleştiğinizi bilmeyeceksiniz.</p>
+            Gruptaki bir kişi <b>GÖNDERİCİ</b> diğer kişi de <b>ALICI</b> olacak.
+
+        </p>
+        <p><b>GÖNDERİCİ</b>'nin {{ Constants.endowment }}'si olacak ve elindeki paranın ne kadarını <b>ALICI</b>'ya teklif etmek istediğine karar verecek. Bu teklif <b>ALICI</b>'ya gidecek.</p>
+        <p>Eğer <b>ALICI</b> teklifi <b>kabul ederse</b>, para bu teklife göre bölüştürülecek. <b>ALICI</b> teklif edilen miktar kadar kazanacak. <b>GÖNDERİCİ</b> ise geri kalan miktarı alacak.({{ Constants.endowment }}-TEKLİF)  </p>
+        <p> Eğer <b>ALICI</b> teklifi <b>kabul etmezse</b>  her iki kişi de 0 TL kazanacak</p>
+
+    </div>
+</div>
+
+
+
+
+
+<!--        <p>-->
+<!--            <i>-->
+<!--          <p>  Size TEKLİF VEREN veya ALICI olarak seçilmeniz durumunda hangi kararları vereceğinizi soracağız. İki farklı karar vereceksiniz</p>-->
+<!--          <p> (1) Eğer TEKLİF VEREN olarak seçilirseniz ne kadar göndereceğinize</p>-->
+<!--          <p> (2) Eğer ALICI olarak seçilirseniz, <b>EN AZ kaç TL'lik</b> bir teklifi kabul edeğinize karar vereceksiniz. </p>-->
+<!--            Siz kararınızı verdikten sonra gruplar belirlenecek, rastgele bir kişi TEKLİF VEREN bir kişi ALICI seçilecek. Kazançlarınız da verdiğiniz kararlara göre belirlenecek.-->
+<!--                <i>-->
+<!--         </p>-->

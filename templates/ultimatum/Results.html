@@ -1,0 +1,44 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Sonuçlar
+{% endblock %}
+
+{% block content %}
+    <p>
+        {% if player.role == 'Proposer' %}
+        <p>Kararlarınıza göre:</p>
+<p> Gönderici olursanız <b>{{ player.offer_player }}</b> göndermek istiyorsunuz.</p>
+        <p> Eğer alıcı olursanız minimum <b>{{ player.min_accepted_offer_player }}</b>'lık bir teklifi kabul edersiniz.</p>
+
+        <p> Bu oyundaki rolünüz <b>TEKLİF VEREN</b> olarak belirlenmiştir</p>
+Elinizdeki {{ Constants.endowment }}'nin <b>{{ group.offer }}</b>'sini <b>ALICI</b>'ya teklif ettin.
+            {% if group.offer_accepted %}
+                Teklifiniz <b>kabul edildi</b>.
+            {% else %}
+                Teklifiniz <b>reddedildi</b>.
+            {% endif %}
+             </p>
+        {% else %}
+        <p>Kararlarınıza göre:</p>
+        <p>Gönderici olursanız <b>{{ player.offer_player }}</b> göndermek istiyorsunuz. </p>
+        <p>Eğer alıcı olursanız minimum <b>{{ player.min_accepted_offer_player }}</b>'lık bir teklifi kabul edersiniz.</p>
+        <p>Bu oyundaki rolünüz <b>ALICI</b> olarak belirlenmiştir</p>
+            Eşleştiğin kişi sana {{ Constants.endowment }} üzerinden <b>{{ group.offer }}</b> teklif etti.
+            {% if group.offer_accepted %}
+                Teklifi <b>kabul ettin</b>.
+            {% else %}
+                Teklifi <b>reddettin</b>.
+            {% endif %}
+        {% endif %}
+
+    </p>
+
+    <p>
+        Toplam ödemeniz: <strong>{{ player.payoff }}</strong>.
+    </p>
+
+    
+
+{% endblock %}
